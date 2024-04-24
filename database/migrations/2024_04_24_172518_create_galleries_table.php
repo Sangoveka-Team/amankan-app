@@ -11,23 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('galleries', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 150);
-            $table->string('username', 100)->unique();
-            $table->timestamp('verified_at')->nullable();
-            $table->string('password', 100);
-            $table->enum('role', ['admin', 'rt', 'user']);
-            $table->rememberToken();
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
-     */ 
+     */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('galleries');
     }
 };
