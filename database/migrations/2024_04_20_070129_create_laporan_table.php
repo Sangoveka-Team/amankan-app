@@ -17,11 +17,11 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
             $table->string('user_image')->nullable();
-            $table->string('nama', 150);
-            $table->string('nomor', 16);
-            $table->text('alamat');
-            $table->dateTime('tanggal');
-            $table->string('status_lapor');
+            $table->string('name', 150);
+            $table->string('number', 16);
+            $table->text('address');
+            $table->dateTime('tgl_lapor');
+            $table->enum('status_lapor', ['selesai', 'belum selesai', 'tak terselesaikan']);
             $table->string('daerah_rt')->nullable();
             $table->text('deskripsi');
             $table->string('maps');
