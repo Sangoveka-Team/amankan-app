@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('password', 100);
             $table->string('number', 16);
             $table->enum('role', ['admin', 'rt', 'pelapor']);
+            $table->string('wilayah', 12)->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
