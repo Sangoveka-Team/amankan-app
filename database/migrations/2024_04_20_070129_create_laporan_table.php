@@ -14,8 +14,7 @@ return new class extends Migration
         Schema::create('laporan', function (Blueprint $table) {
             $table->id();
             $table->string('id_laporan', 100);
-            $table->unsignedBigInteger('user_id')->nullable();
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('set null');
+            $table->foreignId('user_snapshot_id')->constrained('user_snapshots')->onUpdate('cascade');
             $table->string('user_image')->nullable();
             $table->string('name', 150);
             $table->string('number', 16);

@@ -19,11 +19,13 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::create([
-            'name' => 'Admin',
-            'username' => 'admin-amankan-123',
+            'name' => 'Ricko Aprilianto',
+            'username' => 'ricko',
             'password' => bcrypt('admin-amankan'),
             'number' => '081932432218',
             'role' => 'admin',
+            'nik' => '6371040404040006',
+            'user_image' => 'img05.jpg',
             'verified_at' => Carbon::now(),
         ]);
         User::create([
@@ -32,7 +34,8 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('rt1-amankan'),
             'role' => 'rt',
             'number' => '081512345678',
-            'wilayah' => 'RT 1',
+            'nik' => '6371040404040006',
+            'user_image' => 'img05.jpg',
             'verified_at' => Carbon::now()
         ]);
         User::create([
@@ -41,7 +44,8 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('rt2-amankan'),
             'role' => 'rt',
             'number' => '081612345678',
-            'wilayah' => 'RT 2',
+            'nik' => '6371040405040002',
+            'user_image' => 'img02.jpg',
             'verified_at' => Carbon::now()
         ]);
         User::create([
@@ -50,7 +54,8 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('rt3-amankan'),
             'role' => 'rt',
             'number' => '081712345678',
-            'wilayah' => 'RT 3',
+            'nik' => '6371040804970006',
+            'user_image' => 'img03.jpg',
             'verified_at' => Carbon::now()
         ]);
         User::create([
@@ -59,7 +64,8 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('rt4-amankan'),
             'role' => 'rt',
             'number' => '081812345678',
-            'wilayah' => 'RT 04',
+            'nik' => '6371046404040002',
+            'user_image' => 'img04.jpg',
             'verified_at' => Carbon::now()
         ]);
         User::create([
@@ -68,7 +74,8 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('rt5-amankan'),
             'role' => 'rt',
             'number' => '081912345678',
-            'wilayah' => 'RT 05',
+            'nik' => '6371040404840002',
+            'user_image' => 'img05.jpg',
             'verified_at' => Carbon::now()
         ]);
 
