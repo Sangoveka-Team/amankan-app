@@ -15,6 +15,8 @@ class Keamanan
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if (auth()->user()->level !== 'keamanan')
+        return ApiFormatter::createApi(403, 'Forbidden');
         return $next($request);
     }
 }

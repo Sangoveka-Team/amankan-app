@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
             'verified_at' => Carbon::now(),
         ]);
         User::create([
-            'name' => 'RT 01',
+            'name' => 'Syarifuddin',
             'username' => 'rt1-amankan-123',
             'password' => bcrypt('rt1-amankan'),
             'role' => 'rt',

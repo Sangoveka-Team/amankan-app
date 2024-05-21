@@ -15,6 +15,8 @@ class Admin
      */
     public function handle(Request $request, Closure $next): Response
     {
+        if (auth()->user()->level !== 'admin')
+        return ApiFormatter::createApi(403, 'Forbidden');
         return $next($request);
     }
 }
