@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamp('verified_at')->nullable();
             $table->string('password', 100);
             $table->string('number', 16);
-            $table->enum('role', ['admin', 'rt', 'pelapor']);
+            $table->enum('role', ['admin', 'keamanan', 'pelapor']);
             $table->string('nik', 16);
             $table->string('user_image');
             $table->rememberToken();
