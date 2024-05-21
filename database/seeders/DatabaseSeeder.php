@@ -59,6 +59,16 @@ class DatabaseSeeder extends Seeder
             'verified_at' => Carbon::now()
         ]);
         User::create([
+            'name' => 'Rozaq',
+            'username' => 'rozaqgaming321',
+            'password' => bcrypt('rozaq321'),
+            'role' => 'pelapor',
+            'number' => '081812345678',
+            'nik' => '6371046404040002',
+            'user_image' => 'img04.jpg',
+            'verified_at' => Carbon::now()
+        ]);
+        User::create([
             'name' => 'Intan Nur Kholisa',
             'username' => 'intan-ojousama',
             'password' => bcrypt('intan123'),
@@ -66,7 +76,7 @@ class DatabaseSeeder extends Seeder
             'number' => '081812345678',
             'nik' => '6371046404040002',
             'user_image' => 'img04.jpg',
-            'verified_at' => Carbon::now()
+            'verified_at' => null
         ]);
 
 
