@@ -56,7 +56,7 @@ class Kernel extends HttpKernel
         'auth' => \App\Http\Middleware\Authenticate::class,
         'pelapor' => \App\Http\Middleware\Pelapor::class,
         'keamanan' => \App\Http\Middleware\Keamanan::class,
-        'Admin' => \App\Http\Middleware\Admin::class,
+        'admin' => \App\Http\Middleware\Admin::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
         'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
