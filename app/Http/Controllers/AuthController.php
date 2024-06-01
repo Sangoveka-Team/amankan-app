@@ -9,7 +9,7 @@ use App\Models\User;
 use App\Models\PasswordReset;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
-use \Illuminate\Support\Facades\URL;
+use Illuminate\Support\Facades\URL;
 use App\Helper\ApiFormatter;
 use Illuminate\Support\Facades\Auth;
 use Exception;
