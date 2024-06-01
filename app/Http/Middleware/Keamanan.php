@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use App\Helper\ApiFormatter;
 
 class Keamanan
 {
@@ -15,7 +16,7 @@ class Keamanan
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (auth()->user()->level !== 'keamanan')
+        if (auth()->user()->role !== 'keamanan')
         return ApiFormatter::createApi(403, 'Forbidden');
         return $next($request);
     }

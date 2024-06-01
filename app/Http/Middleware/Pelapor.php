@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
+use App\Helper\ApiFormatter;
 
 class Pelapor
 {
@@ -15,7 +16,7 @@ class Pelapor
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if (auth()->user()->level !== 'pelapor')
+        if (auth()->user()->role !== 'pelapor')
         return ApiFormatter::createApi(403, 'Forbidden');
         return $next($request);
     }
