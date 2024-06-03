@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\URL;
 use App\Helper\ApiFormatter;
 use Exception;
 
-class PelaporController extends Controller
+class ProfileController extends Controller
 {
     public function profile(){
         try {

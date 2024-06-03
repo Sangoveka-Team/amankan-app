@@ -5,7 +5,7 @@ use Illuminate\Routing\Controllers\Middleware;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Routing\RouteGroup;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\PelaporController;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,13 +19,27 @@ use App\Http\Controllers\PelaporController;
 */
 
 Route::middleware(['auth:sanctum', 'pelapor'])->group(function () {
-    Route::get('profil-pelapor', [PelaporController::class, 'profile']);
-    Route::post('updateprofil-pelapor', [PelaporController::class, 'updateProfile']);
+    Route::get('profile/pelapor', [ProfileController::class, 'profile']);
+    Route::post('updateprofil-pelapor', [ProfileController::class, 'updateProfile']);
     // Route::get('data-lapor', [LaporanController::class, 'create']);
     // Route::get('riwayat-lapor', [LaporanController::class, 'riwayat']);
     // Route::get('show-laporan/{id}', [LaporanController::class, 'show']);
     // Route::post('post-lapor', [LaporanController::class, 'store']);
-    Route::get('dashboard-lapor', [LaporanController::class, 'index']);
+    // Route::get('dashboard-lapor', [LaporanController::class, 'index']);
+
+});
+Route::middleware(['auth:sanctum', 'keamanan'])->group(function () {
+    Route::get('profile/keamanan', [ProfileController::class, 'profile']);
+    Route::post('updateprofil-pelapor', [ProfileController::class, 'updateProfile']);
+});
+Route::middleware(['auth:sanctum', 'admin'])->group(function () {
+    Route::get('profile/admin', [ProfileController::class, 'profile']);
+    Route::post('updateprofil-pelapor', [ProfileController::class, 'updateProfile']);
+    // Route::get('data-lapor', [LaporanController::class, 'create']);
+    // Route::get('riwayat-lapor', [LaporanController::class, 'riwayat']);
+    // Route::get('show-laporan/{id}', [LaporanController::class, 'show']);
+    // Route::post('post-lapor', [LaporanController::class, 'store']);
+    // Route::get('dashboard-lapor', [LaporanController::class, 'index']);
 
 });
 
