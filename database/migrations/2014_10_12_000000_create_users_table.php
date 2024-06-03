@@ -21,6 +21,8 @@ return new class extends Migration
             $table->enum('role', ['admin', 'keamanan', 'pelapor']);
             $table->string('nik', 16);
             $table->string('user_image');
+            $table->string('lokasi_rumah')->nullable();
+            $table->boolean('permintaan_petugas')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });
