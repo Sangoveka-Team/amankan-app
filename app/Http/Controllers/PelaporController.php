@@ -27,14 +27,14 @@ class PelaporController extends Controller
             $data = [
                 'namaUser' => $namaUser,
                 'laporanTerakhirDashboard' => $laporanTerakhirDashboard->map(function ($laporan){
-                    $firstGallery = $laporan->galleries->first();
+                    $fotoLaporan = $laporan->galleries->where('image_type', 'foto_laporan')->first();
 
                     return [
                         'id' => $laporan->id,
                         'deskripsi_lapor' => $laporan->deskripsi,
                         'lokasi_kejadian' => $laporan->lokasi_kejadian,
                         'waktu_lalu' => Carbon::parse($laporan->tgl_lapor)->diffForHumans(),
-                        'gambar_laporan' => $firstGallery->file_name,
+                        'gambar_laporan' => $fotoLaporan->path,
                         'maps' => $laporan->maps
                     ];
 
@@ -62,7 +62,7 @@ class PelaporController extends Controller
 
             $data = [
                 'laporanAnda' => $laporanAnda->map(function ($laporan){
-                    $firstGallery = $laporan->galleries->first();
+                    $fotoLaporan = $laporan->galleries->where('image_type', 'foto_laporan')->first();
 
                     return [
                         'id' => $laporan->id,
@@ -73,7 +73,7 @@ class PelaporController extends Controller
                         'lokasi_kejadian' => $laporan->lokasi_kejadian,
                         'waktu_lalu' => Carbon::parse($laporan->tgl_lapor)->diffForHumans(),
                         'maps' => $laporan->maps,
-                        'gambar_laporan' => $firstGallery->file_name
+                        'gambar_laporan' => $fotoLaporan->path
                     ];
 
                 }),
