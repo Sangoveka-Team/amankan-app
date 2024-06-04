@@ -14,4 +14,6 @@ class Gallery extends Model
     public function Laporan(){
         return $this->belongsTo(Laporan::class);
     }
+
+    
 }

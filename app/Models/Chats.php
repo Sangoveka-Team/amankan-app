@@ -15,7 +15,7 @@ class Chats extends Model
         return $this->belongsTo(Laporan::class);
     }
 
-    public function User(){
-        return $this->belongsTo(User::class);
+    public function UserSnapshot(){
+        return $this->belongsTo(User_Snapshot::class);
     }
 }

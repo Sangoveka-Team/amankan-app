@@ -13,7 +13,18 @@ class Laporan extends Model
 
     protected $status_lapor = ['selesai', 'belum selesai', 'tak terselesaikan'];
 
-    public function User(){
-        return $this->belongsTo(User::class);
+    
+    public function userSnapshot(){
+        return $this->belongsTo(User_Snapshot::class, 'user__snapshot_id', 'id');
+    }
+
+
+    public function galleries(){
+        return $this->hasMany(Gallery::class);
+    }
+
+
+    public function Chats(){
+        return $this->hasMany(Chat::class);
     }
 }
