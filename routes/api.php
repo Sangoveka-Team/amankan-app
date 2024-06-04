@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Routing\RouteGroup;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\PelaporController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,11 +22,11 @@ use App\Http\Controllers\ProfileController;
 Route::middleware(['auth:sanctum', 'pelapor'])->group(function () {
     Route::get('profile/pelapor', [ProfileController::class, 'profile']);
     Route::post('updateprofil-pelapor', [ProfileController::class, 'updateProfile']);
-    // Route::get('data-lapor', [LaporanController::class, 'create']);
+    Route::get('laporan/pelapor', [PelaporController::class, 'laporanAnda']);
     // Route::get('riwayat-lapor', [LaporanController::class, 'riwayat']);
     // Route::get('show-laporan/{id}', [LaporanController::class, 'show']);
     // Route::post('post-lapor', [LaporanController::class, 'store']);
-    // Route::get('dashboard-lapor', [LaporanController::class, 'index']);
+    Route::get('dashboard/pelapor', [PelaporController::class, 'dashboardPelapor']);
 
 });
 Route::middleware(['auth:sanctum', 'keamanan'])->group(function () {
