@@ -11,17 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('laporan', function (Blueprint $table) {
+        Schema::create('laporans', function (Blueprint $table) {
             $table->id();
             $table->string('id_laporan', 100);
-            $table->foreignId('user_snapshot_id')->constrained('user_snapshots')->onUpdate('cascade');
-            $table->string('user_image')->nullable();
-            $table->string('name', 150);
-            $table->string('number', 16);
-            $table->text('address');
+            $table->foreignId('user__snapshot_id')->constrained('user__snapshots')->onUpdate('cascade');
+            $table->text('lokasi_kejadian');
             $table->dateTime('tgl_lapor');
             $table->enum('status_lapor', ['selesai', 'belum selesai', 'tak terselesaikan']);
-            $table->string('daerah_rt')->nullable();
             $table->text('deskripsi');
             $table->string('maps');
             $table->timestamps();

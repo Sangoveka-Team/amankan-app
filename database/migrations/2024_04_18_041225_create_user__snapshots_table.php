@@ -11,16 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('user_snapshots', function (Blueprint $table) {
+        Schema::create('user__snapshots', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users')->onDelete('set null')->onUpdate('cascade');
             $table->string('name', 150);
             $table->string('username', 100)->unique();
+            $table->string('email')->unique();
+            $table->enum('role', ['admin', 'keamanan', 'pelapor']);
             $table->string('number', 16);
             $table->string('nik', 16);
             $table->string('user_image');
             $table->timestamps();
+            // tambahkan role untuk user_snapshot (kdd role nya amjing)
         });
     }
 
