@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
             $table->foreignId('laporan_id')->constrained('laporans')->onDelete('cascade')->onUpdate('cascade');
-            $table->string('file_name');
+            $table->enum('image_type', ['foto_laporan', 'foto_penangkapan']);
+            $table->string('path');
             $table->timestamps();
         });
     }

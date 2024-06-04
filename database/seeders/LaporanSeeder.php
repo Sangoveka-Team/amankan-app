@@ -47,11 +47,13 @@ class LaporanSeeder extends Seeder
         DB::table('galleries')->insert([
             [
                 'laporan_id' => 1,
-                'file_name' => 'img001.webp'
+                'image_type' => 'foto_laporan',
+                'path' => 'img/img001.webp'
             ],
             [
                 'laporan_id' => 2,
-                'file_name' => 'img001.webp'
+                'image_type' => 'foto_laporan',
+                'path' => 'img/img001.webp'
             ],
         ]);
     }
