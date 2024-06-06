@@ -12,7 +12,7 @@ class Gallery extends Model
     protected $guarded = ['id'];
 
     public function Laporan(){
-        return $this->belongsTo(Laporan::class);
+        return $this->belongsTo(Laporan::class, 'laporan_id', 'id');
     }
 
     

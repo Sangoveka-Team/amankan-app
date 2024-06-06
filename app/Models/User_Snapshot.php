@@ -21,7 +21,7 @@ class User_Snapshot extends Model
     }
 
     public function chats(){
-        return $this->hasMany(Chat::class);
+        return $this->hasMany(Chats::class);
     }
 
 }

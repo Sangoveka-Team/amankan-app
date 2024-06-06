@@ -15,7 +15,7 @@ class Laporan extends Model
 
     
     public function userSnapshot(){
-        return $this->belongsTo(User_Snapshot::class, 'user__snapshot_id', 'id');
+        return $this->belongsTo(User_Snapshot::class, 'user__snapshot_id', 'user_id');
     }
 
 
@@ -24,7 +24,7 @@ class Laporan extends Model
     }
 
 
-    public function Chats(){
-        return $this->hasMany(Chat::class);
+    public function chats(){
+        return $this->hasMany(Chats::class);
     }
 }
