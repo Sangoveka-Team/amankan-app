@@ -20,8 +20,7 @@ class PelaporController extends Controller
 
             $namaUser = auth()->user()->name;
 
-            $laporanTerakhirDashboard = Laporan::with('galleries')
-                ->orderBy('tgl_lapor', 'desc')
+            $laporanTerakhirDashboard = Laporan::orderBy('tgl_lapor', 'desc')
                 ->take(10)->get();
 
             $data = [
@@ -55,8 +54,7 @@ class PelaporController extends Controller
         try {
             Carbon::setLocale('id');
 
-            $laporanAnda = Laporan::with(['userSnapshot','galleries'])
-                ->where('user__snapshot_id', auth()->user()->id)
+            $laporanAnda = Laporan::where('user__snapshot_id', auth()->user()->id)
                 ->orderBy('tgl_lapor', 'desc')
                 ->get();
 
@@ -74,7 +72,7 @@ class PelaporController extends Controller
                         'waktu_lalu' => Carbon::parse($laporan->tgl_lapor)->diffForHumans(),
                         'maps' => $laporan->maps,
                         'gambar_laporan' => $fotoLaporan->path
-                    ];
+                ];
 
                 }),
             ];
