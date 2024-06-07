@@ -11,7 +11,7 @@ use App\Helper\ApiFormatter;
 use Exception;
 use Carbon\Carbon;
 
-class PelaporController extends Controller
+class UserController extends Controller
 {
     public function dashboardPelapor(){
 
