@@ -25,15 +25,19 @@ Route::middleware(['auth:sanctum', 'pelapor'])->group(function () {
     Route::post('updateprofil-pelapor', [ProfileController::class, 'updateProfile']);
     Route::get('laporan/pelapor', [UserController::class, 'laporanAnda']);
     Route::get('laporan/all/pelapor', [LaporanController::class, 'index']);
-    Route::get('laporan/pelapor/{id}', [LaporanController::class, 'show']);
+    Route::get('laporan/{id}/pelapor', [LaporanController::class, 'show']);
     // Route::get('show-laporan/{id}', [LaporanController::class, 'show']);
     // Route::post('post-lapor', [LaporanController::class, 'store']);
     Route::get('dashboard/pelapor', [UserController::class, 'dashboardPelapor']);
 
 });
 Route::middleware(['auth:sanctum', 'keamanan'])->group(function () {
-    Route::get('profile/keamanan', [ProfileController::class, 'profile']);
+    Route::get('profile/petugas', [ProfileController::class, 'profile']);
     Route::post('updateprofil-pelapor', [ProfileController::class, 'updateProfile']);
+    Route::get('laporan/petugas', [UserController::class, 'laporanAnda']);
+    Route::get('laporan/all/petugas', [LaporanController::class, 'index']);
+    Route::get('laporan/{id}/petugas', [LaporanController::class, 'show']);
+    Route::get('dashboard/petugas', [UserController::class, 'dashboardPelapor']);
 });
 Route::middleware(['auth:sanctum', 'admin'])->group(function () {
     Route::get('profile/admin', [ProfileController::class, 'profile']);
