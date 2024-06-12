@@ -43,10 +43,8 @@ Route::middleware(['auth:sanctum', 'keamanan'])->group(function () {
 Route::middleware(['auth:sanctum', 'admin'])->group(function () {
     Route::get('profile/admin', [ProfileController::class, 'profile']);
     Route::post('updateprofil-pelapor', [ProfileController::class, 'updateProfile']);
-    // Route::get('data-lapor', [LaporanController::class, 'create']);
     Route::get('laporan/all/admin', [LaporanController::class, 'index']);
     Route::get('laporan/{id}/admin', [LaporanController::class, 'show']);
-    // Route::post('post-lapor', [LaporanController::class, 'store']);
     Route::get('dashboard/admin', [AdminController::class, 'dashboardAdmin']);
     Route::get('akun/all', [AdminController::class, 'getSemuaAkun']);
     Route::get('akun/{id}', [AdminController::class, 'detailAkun']);
