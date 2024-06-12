@@ -48,12 +48,34 @@ class LaporanSeeder extends Seeder
             [
                 'laporan_id' => 1,
                 'image_type' => 'foto_laporan',
-                'path' => 'img/img001.webp'
+                'path' => 'img/img001.webp',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'laporan_id' => 2,
                 'image_type' => 'foto_laporan',
-                'path' => 'img/img001.webp'
+                'path' => 'img/img001.webp',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+        ]);
+
+
+        DB::table('chats')->insert([
+            [
+                'laporan_id' => 1,
+                'user__snapshot_id' => 5,
+                'message' => 'Wah, ini mengerikan sekali, ayo tangkap saya akan ikut membantu',
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'laporan_id' => 1,
+                'user__snapshot_id' => 3,
+                'message' => 'Halo, saya akan segera kesana',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
         ]);
     }
