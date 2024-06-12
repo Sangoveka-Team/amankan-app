@@ -17,7 +17,7 @@ return new class extends Migration
             $table->foreignId('user__snapshot_id')->constrained('user__snapshots')->onUpdate('cascade');
             $table->text('lokasi_kejadian');
             $table->dateTime('tgl_lapor');
-            $table->enum('status_lapor', ['selesai', 'belum selesai', 'tak terselesaikan']);
+            $table->enum('status_lapor', ['selesai', 'belum selesai', 'gagal', 'tidak valid']);
             $table->text('deskripsi');
             $table->string('maps');
             $table->timestamps();
