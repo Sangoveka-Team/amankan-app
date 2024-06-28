@@ -23,10 +23,11 @@ use App\Http\Controllers\AdminController;
 
 Route::middleware(['auth:sanctum', 'pelapor'])->group(function () {
     Route::get('profile/pelapor', [ProfileController::class, 'profile']);
-    Route::post('updateprofil-pelapor', [ProfileController::class, 'updateProfile']);
+    Route::patch('profile/pelapor/update', [ProfileController::class, 'updateProfile']);
     Route::get('laporan/pelapor', [UserController::class, 'laporanAnda']);
     Route::get('laporan/all/pelapor', [LaporanController::class, 'index']);
     Route::get('laporan/{id}/pelapor', [LaporanController::class, 'show']);
+    Route::post('laporan/pelapor/create', [LaporanController::class, 'createLaporan']);
     // Route::get('show-laporan/{id}', [LaporanController::class, 'show']);
     // Route::post('post-lapor', [LaporanController::class, 'store']);
     Route::get('dashboard/pelapor', [UserController::class, 'dashboardPelapor']);

@@ -22,4 +22,38 @@ class ProfileController extends Controller
             return ApiFormatter::createApi(401, 'failed', $error);
         }
     }
+
+    public function updateProfile(Request $request){
+        try {
+            $user = User::findOrFail(auth()->user()->id);
+
+            $user->username = $request->username;
+            $user->name = $request->name;
+            $user->number = $request->number;
+            $user->alamat = $request->alamat;
+            $user->lokasi_rumah = $request->lokasi_rumah;
+
+            if ($request->hasFile('image')) {
+                $image = $request->file('image');
+                $imageName = time() . '.' . $image->extension();
+                $image->move(public_path('img'), $imageName);
+                $path =  "img/" . $imageName;
+                
+                $user->image = $path;
+            } else {
+                $user->image = $user->image;
+            }
+
+            // dd($request->nama);
+
+            if ($user->update()) {
+                return ApiFormatter::createApi(200, 'success', $user);
+            } else{
+            return ApiFormatter::createApi(401, 'failed');
+            }
+
+        } catch (Exception $error) {
+            return ApiFormatter::createApi(401, 'failed', $error);
+        }
+    }
 }

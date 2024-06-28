@@ -25,6 +25,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'ricko.admin@gmail.com',
             'password' => bcrypt('admin-amankan-01'),
             'number' => '081932432218',
+            'alamat' => 'jalan padat karya 313',
             'role' => 'admin',
             'nik' => '6371040404040006', 
             'user_image' => 'img05.jpg',
@@ -37,6 +38,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'bhakti.keamanan@gmail.com',
             'role' => 'keamanan',
             'number' => '081612345678',
+            'alamat' => 'jalan padat 113',
             'nik' => '6371040405040002',
             'user_image' => 'img02.jpg',
             'verified_at' => Carbon::now()
@@ -48,6 +50,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'syarifudin.keamanan@gmail.com',
             'role' => 'keamanan',
             'number' => '081512345678',
+            'alamat' => 'jalan padat karya 213',
             'nik' => '6371040404040006',
             'user_image' => 'img05.jpg',
             'verified_at' => Carbon::now()
@@ -59,7 +62,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'aminudin.keamanan@gmail.com',
             'role' => 'keamanan',
             'number' => '081712345678',
-            'nik' => '6371040804970006',
+            'alamat' => 'jalan padat 310'
+     ,       'nik' => '6371040804970006',
             'user_image' => 'img03.jpg',
             'verified_at' => Carbon::now()
         ]);
@@ -70,7 +74,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'rozaq.pelapor@gmail.com',
             'role' => 'pelapor',
             'number' => '081812345678',
-            'nik' => '6371046404040002',
+            'alamat' => 'jalan karya 309'
+     ,       'nik' => '6371046404040002',
             'user_image' => 'img04.jpg',
             'verified_at' => Carbon::now()
         ]);
@@ -81,6 +86,7 @@ class DatabaseSeeder extends Seeder
             'password' => bcrypt('intan123'),
             'role' => 'pelapor',
             'number' => '081812345678',
+            'alamat' => 'jalan padat karya 200',
             'nik' => '6371046404040002',
             'user_image' => 'img04.jpg',
             'verified_at' => null
@@ -96,6 +102,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'ricko.admin@gmail.com',
             'role' => 'admin',
             'number' => '081932432218',
+            'alamat' => 'jalan padat karya 313',
             'nik' => '6371040404040006',
             'user_image' => 'img05.jpg',
         ]);
@@ -107,6 +114,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'bhakti.keamanan@gmail.com',
             'role' => 'admin',
             'number' => '081612345678',
+            'alamat' => 'jalan padat 113',
             'nik' => '6371040405040002',
             'user_image' => 'img02.jpg',
         ]);
@@ -118,6 +126,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'syarifudin.keamanan@gmail.com',
             'role' => 'keamanan',
             'number' => '081512345678',
+            'alamat' => 'jalan padat karya 213',
             'nik' => '6371040404040006',
             'user_image' => 'img05.jpg',
         ]);
@@ -129,6 +138,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'aminudin.keamanan@gmail.com',
             'role' => 'keamanan',
             'number' => '081712345678',
+            'alamat' => 'jalan padat 310',
             'nik' => '6371040804970006',
             'user_image' => 'img03.jpg',
         ]);
@@ -140,6 +150,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'rozaq.pelapor@gmail.com',
             'role' => 'pelapor',
             'number' => '081812345678',
+            'alamat' => 'jalan karya 309',
             'nik' => '6371046404040002',
             'user_image' => 'img04.jpg',
         ]);
@@ -151,6 +162,7 @@ class DatabaseSeeder extends Seeder
             'email' => 'intan.pelapor@gmail.com',
             'role' => 'pelapor',
             'number' => '081812345678',
+            'alamat' => 'jalan padat karya 200',
             'nik' => '6371046404040002',
             'user_image' => 'img04.jpg',
         ]);

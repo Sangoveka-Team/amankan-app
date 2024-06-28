@@ -20,6 +20,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->enum('role', ['admin', 'keamanan', 'pelapor']);
             $table->string('number', 16);
+            $table->text('alamat');
             $table->string('nik', 16);
             $table->string('user_image');
             $table->timestamps();
