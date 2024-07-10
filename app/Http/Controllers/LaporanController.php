@@ -87,6 +87,7 @@ class LaporanController extends Controller
                         
                         return [
                             'id' => $chat->id,
+                            'id_user' => $chat->userSnapshot->id,
                             'nama_netizen' => $chat->userSnapshot->name,
                             'foto_netizen' => $chat->userSnapshot->image,
                             'komentar' => $chat->message,
