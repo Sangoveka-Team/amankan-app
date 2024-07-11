@@ -152,7 +152,7 @@ class LaporanController extends Controller
                 Log::error('Invalid image file');
             }
 
-            $imgLaporan = Gallery::where('laporan_id', $laporan->id)->get();
+            $imgLaporan = Gallery::where('laporan_id', $laporan->id)->where('image_type', 'foto_laporan')->get();
 
 
             if ($imgLaporan !== null) {
@@ -177,10 +177,38 @@ class LaporanController extends Controller
         try {
             $laporan = Laporan::findOrFail($id);
             $laporan->status_lapor = $request->status_lapor;
+            $laporan->update();
 
-            if ($laporan->update()) {
-                return ApiFormatter::createApi(200, 'success', $laporan);
-            } else{
+
+            $image = $request->file('image'); 
+            $imageName = time() . '.' . $image->getClientOriginalextension();
+            $image->move(public_path('img/' . $imageName));
+            $path = 'img/' . $imageName;
+            $fileImage = Gallery::where('laporan_id', $laporan->id)->where('image_type', 'foto_penangkapan')->first();
+            if($fileImage){
+                $fileImage->laporan_id = $laporan->id;
+                $fileImage->image_type = 'foto_penangkapan';
+                $fileImage->path = $path;
+                $fileImage->update();
+            } else {
+                $fileImage = new Gallery;
+                $fileImage->laporan_id = $laporan->id;
+                $fileImage->image_type = 'foto_penangkapan';
+                $fileImage->path = $path;
+                $fileImage->save();
+            }
+
+            $imgPenangkapan = Gallery::where('laporan_id', $laporan->id)->where('image_type', 'foto_penangkapan')->get();
+            dd($imgPenangkapan);
+
+            if ($imgPenangkapan !== null) {
+                $data = [
+                    "laporan" => $laporan,
+                    "images" => $imgPenangkapan,
+                ];
+
+            return ApiFormatter::createApi(200, 'success', $data);
+            } else {
                 return ApiFormatter::createApi(401, 'failed');
             }
 

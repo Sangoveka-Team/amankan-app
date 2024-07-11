@@ -28,9 +28,7 @@ Route::middleware(['auth:sanctum', 'pelapor'])->group(function () {
     Route::get('laporan/all/pelapor', [LaporanController::class, 'index']);
     Route::get('laporan/{id}/pelapor', [LaporanController::class, 'show']);
     Route::post('laporan/create/pelapor', [LaporanController::class, 'createLaporan']);
-    Route::patch('laporan/update/{id}/status/pelapor', [LaporanController::class, 'updateStatusLapor']);
-    // Route::get('show-laporan/{id}', [LaporanController::class, 'show']);
-    // Route::post('post-lapor', [LaporanController::class, 'store']);
+    Route::patch('laporan/update/status/{id}/pelapor', [LaporanController::class, 'updateStatusLapor']);
     Route::get('dashboard/pelapor', [UserController::class, 'dashboardPelapor']);
 
 });
@@ -40,6 +38,7 @@ Route::middleware(['auth:sanctum', 'keamanan'])->group(function () {
     Route::get('laporan/petugas', [UserController::class, 'laporanAnda']);
     Route::get('laporan/all/petugas', [LaporanController::class, 'index']);
     Route::get('laporan/{id}/petugas', [LaporanController::class, 'show']);
+    Route::patch('laporan/update/status/{id}/pelapor', [LaporanController::class, 'updateStatusLapor']);
     Route::get('dashboard/petugas', [UserController::class, 'dashboardPelapor']);
 });
 Route::middleware(['auth:sanctum', 'admin'])->group(function () {
