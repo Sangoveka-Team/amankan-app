@@ -36,7 +36,7 @@ Route::middleware(['auth:sanctum', 'pelapor'])->group(function () {
 });
 Route::middleware(['auth:sanctum', 'keamanan'])->group(function () {
     Route::get('profile/petugas', [ProfileController::class, 'profile']);
-    Route::post('updateprofil-pelapor', [ProfileController::class, 'updateProfile']);
+    Route::post('profile/update/petugas', [ProfileController::class, 'updateProfile']);
     Route::get('laporan/petugas', [UserController::class, 'laporanAnda']);
     Route::get('laporan/all/petugas', [LaporanController::class, 'index']);
     Route::get('laporan/{id}/petugas', [LaporanController::class, 'show']);
@@ -44,7 +44,7 @@ Route::middleware(['auth:sanctum', 'keamanan'])->group(function () {
 });
 Route::middleware(['auth:sanctum', 'admin'])->group(function () {
     Route::get('profile/admin', [ProfileController::class, 'profile']);
-    Route::post('updateprofil-pelapor', [ProfileController::class, 'updateProfile']);
+    Route::post('profile/update/admin', [ProfileController::class, 'updateProfile']);
     Route::get('laporan/all/admin', [LaporanController::class, 'index']);
     Route::get('laporan/{id}/admin', [LaporanController::class, 'show']);
     Route::get('dashboard/admin', [AdminController::class, 'dashboardAdmin']);
