@@ -87,7 +87,7 @@ class LaporanController extends Controller
                         
                         return [
                             'id' => $chat->id,
-                            'id_user' => $chat->userSnapshot->id,
+                            'id_netizen' => $chat->userSnapshot->id,
                             'nama_netizen' => $chat->userSnapshot->name,
                             'foto_netizen' => $chat->userSnapshot->image,
                             'komentar' => $chat->message,
@@ -171,5 +171,21 @@ class LaporanController extends Controller
             return ApiFormatter::createApi(401, 'failed', $error);
         }
 
+    }
+
+    public function updateStatusLapor(Request $request, $id){
+        try {
+            $laporan = Laporan::findOrFail($id);
+            $laporan->status_lapor = $request->status_lapor;
+
+            if ($laporan->update()) {
+                return ApiFormatter::createApi(200, 'success', $laporan);
+            } else{
+                return ApiFormatter::createApi(401, 'failed');
+            }
+
+        } catch (Exception $error) {
+            return ApiFormatter::createApi(401, 'failed', $error);
+        }
     }
 }

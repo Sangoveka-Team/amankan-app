@@ -27,7 +27,6 @@ class ProfileController extends Controller
         try {
             $user = User::findOrFail(auth()->user()->id);
 
-            $user->username = $request->username;
             $user->name = $request->name;
             $user->number = $request->number;
             $user->alamat = $request->alamat;
@@ -39,9 +38,9 @@ class ProfileController extends Controller
                 $image->move(public_path('img'), $imageName);
                 $path =  "img/" . $imageName;
                 
-                $user->image = $path;
+                $user->user_image = $path;
             } else {
-                $user->image = $user->image;
+                $user->user_image = $user->user_image;
             }
 
             // dd($request->nama);
